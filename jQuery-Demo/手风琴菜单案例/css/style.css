@@ -1,0 +1,60 @@
+body {
+    font: 16px "Microsoft YaHei",sans-serif;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.nav-list {
+    width: 220px;
+    border-bottom: 1px solid #ccc;
+}
+.nav-list h3 {
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #fff;
+    background-color: #333;
+    border-top: 1px solid #ccc;
+    /*箭头step1*/
+    position: relative;
+    cursor: pointer;
+}
+ /*箭头step2*/
+.nav-list h3:hover {
+    background-color: #222;
+}
+/*箭头step3*/
+.nav-list h3 span {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    width: 18px;
+    height: 18px;
+    background: url("../image/off.png") no-repeat;
+}
+.nav-list h3.on span {
+    background: url("../image/on.png") no-repeat;
+}
+.nav-list ul {
+    display: none;
+}
+.nav-list li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    color: #333;
+    font-size: 14px;
+}
+/*鼠标移到链接上的样式*/
+.nav-list li a:hover {
+    background-color: #ccc;
+}

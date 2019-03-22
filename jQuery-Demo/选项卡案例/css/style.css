@@ -1,0 +1,41 @@
+body {
+  font: 16px "Microsoft YaHei",sans-serif;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  margin: 100px auto;
+  width:  800px;
+}
+.option-list {
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.option-list li {
+  padding: 0 20px;
+  height: 39px;
+  line-height: 40px;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  float: left;
+  background-color: #aaa;
+  cursor: pointer;
+}
+.option-list li.current {
+  background-color: #fff;
+  height: 40px;
+}
+.card-list li {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  height: 400px;
+  border-top: none;
+}
+.card-list li.current {
+  display: block;
+}

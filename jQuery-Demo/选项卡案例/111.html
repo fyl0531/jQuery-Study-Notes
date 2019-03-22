@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  ul {
+    list-style: none;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    border: 2px solid pink;
+  }
+  li {
+    height: 20px;
+    margin-top: 20px;
+    border: 2px solid pink;
+    cursor: pointer;
+  }
+  #mylist li.current {
+    background-color: blueviolet;
+  }
+</style>
+<body>
+  <ul id="mylist">
+    <li>jhjhiojkjkkjkjk</li>
+    <li>jhjhiojkjkkjkjk</li>
+    <li>jhjhiojkjkkjkjk</li>
+    <li>jhjhiojkjkkjkjk</li>
+    <li>jhjhiojkjkkjkjk</li>
+    <li>jhjhiojkjkkjkjk</li>
+    <li>jhjhiojkjkkjkjk</li>
+  </ul>
+  <input type="text" id="content">
+  <button id="btn">添加</button>
+  <button id="btn1">按钮1</button>
+  <button id="btn2">按钮2</button>
+  <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      /* $("#mylist li").click(function(){
+        $(this).toggleClass("current");
+      }); */
+      $("#mylist").on("click","li",function(){
+        $(this).toggleClass("current");
+      })
+      $("#btn").click(function(){
+        $("<li>")
+        .html($("#content").val())
+        .appendTo("#mylist");
+      })
+      $("#btn").mouseover(function(){
+        $(this)
+        .css("background-color","#999");
+      })
+      $("#btn1").click(function(){
+        alert("啊，你真好看！");
+      })
+      $("#btn2").click(function(){
+        $("#btn").trigger("mouseover");
+      })
+     
+
+    })
+  </script>
+</body>
+</html>
