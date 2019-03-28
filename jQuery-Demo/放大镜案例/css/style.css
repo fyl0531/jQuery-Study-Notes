@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#box:hover {
+  display: block;
+}
+#smallBox {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 400px;
+  height: 600px;
+}
+#smallBox img {
+  width: 400px;
+  height: 600px;
+}
+#bigBox {
+  margin: 0;
+  padding: 0;
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  width: 400px;
+  height: 400px;
+}
+#bigBox img {
+  width: 800px;
+  height: 1200px;
+}
+#zoom {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: url("../images/zoom.png");
+  /*这句话一定要加，不然鼠标同时在zoom和smallBox上的时候会发生闪烁*/
+  pointer-events: none;
+  cursor: move;
+}
