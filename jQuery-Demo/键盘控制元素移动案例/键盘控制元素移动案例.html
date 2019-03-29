@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>键盘控制元素移动案例</title>
+</head>
+<style>
+  #element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  textarea {
+    position: absolute;
+    left: 45%;
+    top: 90%;
+  }
+</style>
+<body>
+  <textarea cols="20" rows="3">
+    w           ↑
+  a s d     ←  ↓  →
+  </textarea>
+  <img id="element" src="img.png" alt="img">
+  <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      //绑定键盘事件
+      $(document).keydown(function(event){
+        console.log(event.which);
+        //页面的宽度
+        var pWidth = $(window).width();
+        var pHeight = $(window).height();
+        //元素位置
+        var left = $("#element").offset().left;
+        var top = $("#element").offset().top;
+        console.log(event.which);
+        switch (event.which){
+          //w键向上；
+          case 87,38:
+            $("#element").offset({
+              top:Math.max((top-10),0),
+            });
+            break;
+          //s键向下；
+          case 83,40:
+            $("#element").offset({
+              top:Math.min((top+10),(pHeight-100)),
+            });
+            break;
+          //a键向左；
+          case 65,37:
+            $("#element").offset({
+              left:Math.max((left-10),0),
+            });
+            break;
+          //d键向右；
+          case 68,39:
+            $("#element").offset({ 
+              left:Math.min((left+10),(pWidth-100)),
+            });
+            break;
+        }
+      });
+    })
+  </script>
+</body>
+</html>
